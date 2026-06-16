@@ -233,7 +233,7 @@ p {
   font-size: 0.95rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--text-primary) !important;
+  color: #ffffff !important; /* Default white text on dark hero/CTA backdrops */
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--gold-primary);
   border-radius: 50px;
@@ -241,6 +241,12 @@ p {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: var(--transition-smooth);
+}
+
+/* Override for when glass buttons are used on light backgrounds in light mode */
+body:not(.dark-mode) .pricing-card .btn-glass-secondary,
+body:not(.dark-mode) .section-padding .btn-glass-secondary:not(.hero-cinema *):not(.floating-glass-card *) {
+  color: #111111 !important;
 }
 
 .btn-glass-secondary:hover {
