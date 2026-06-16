@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Photo Booth Experiences | LUXEBOOTH Premium</title>
+  <meta name="description" content="Discover our alternative luxury layout. Premium DSLR booths, custom corporate branding setups, and real-time social sharing terminals.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z%22/><circle cx=%2212%22 cy=%2213%22 r=%223%22/></svg>">
+  
+  <!-- CSS Library CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Core Styles -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <style>
+    /* Simulated Video Ken Burns Animation */
+    .ken-burns-hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ken-burns-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      animation: kenburns 20s ease-in-out infinite alternate;
+      z-index: -2;
+    }
+    @keyframes kenburns {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.15) translate(-2%, -1%); }
+    }
+    
+    /* Interactive Showcase Tabs */
+    .showcase-tab-btn {
+      background: transparent;
+      border: 1px solid var(--border-glass);
+      color: var(--text-secondary);
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius-sm);
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+      width: 100%;
+      text-align: left;
+    }
+    [dir="rtl"] .showcase-tab-btn {
+      text-align: right;
+    }
+    .showcase-tab-btn.active,
+    .showcase-tab-btn:hover {
+      background: var(--gold-gradient);
+      color: #000000;
+      border-color: transparent;
+      box-shadow: 0 5px 15px var(--gold-glow);
+    }
+    
+    .showcase-display-img {
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-glass);
+      max-height: 450px;
+      object-fit: cover;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="premium-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+      </a>
+
+      <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="booth-styles.html" class="nav-link">Booth Styles</a></li>
+          <li><a href="pricing.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="faq.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <!-- Mobile & Tablet menu controls -->
+          <li class="mobile-menu-controls">
+            <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+              <i data-lucide="moon"></i>
+            </button>
+            <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+              <i data-lucide="arrow-left-right"></i>
+            </button>
+            <a href="contact.html" class="btn-gold-primary">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header controls for Desktop -->
+      <div class="header-controls">
+        <div class="header-ctas">
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
+        <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       1. CINEMATIC VIDEO HERO (KEN BURNS OVERLAY)
+       ========================================================================== -->
+  <section class="ken-burns-hero">
+    <div class="ken-burns-bg"></div>
+    <div class="hero-cinema-overlay"></div>
+    <div class="hero-content text-center">
+      <span class="hero-subtitle" data-aos="fade-up">Elite Social Media Activation</span>
+      <h1 class="hero-title text-white" data-aos="fade-up" data-aos-delay="100">Next-Gen Event Photographic Systems</h1>
+      <p class="hero-desc text-white-50 mb-5 max-width-600 mx-auto" data-aos="fade-up" data-aos-delay="200">
+        Immersive red carpet, high-speed 360 videos, AI green screen overlays, and high-fidelity dye-sublimation print outputs.
+      </p>
+      <div class="button-group" data-aos="fade-up" data-aos-delay="300">
+        <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        <a href="pricing.html" class="btn-glass-secondary">View Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. LUXURY STATISTICS DASHBOARD
+       ========================================================================== -->
+  <section class="section-padding bg-dark text-white" style="background-color: #000000 !important; border-bottom: 1px solid var(--border-glass);">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5" data-aos="fade-right">
+          <span class="section-subtitle" style="color: var(--gold-primary);">By The Numbers</span>
+          <h2 class="text-white text-start mb-4">Setting the Gold Standard in Event Innovation</h2>
+          <p class="text-white-50">Our track record speaks for itself. We deliver high-end, responsive installations with zero downtime and studio-grade outputs.</p>
+        </div>
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="floating-glass-card p-4">
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="fw-bold">Client Experience Rating</span>
+                <span class="text-gold" style="color: var(--gold-primary);">99.8%</span>
+              </div>
+              <div class="progress" style="height: 6px; background: rgba(255,255,255,0.1);">
+                <div class="progress-bar" role="progressbar" style="width: 99.8%; background: var(--gold-gradient);" aria-valuenow="99.8" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="fw-bold">High-Speed Sharing Delivery</span>
+                <span class="text-gold" style="color: var(--gold-primary);">&lt; 3 Seconds</span>
+              </div>
+              <div class="progress" style="height: 6px; background: rgba(255,255,255,0.1);">
+                <div class="progress-bar" role="progressbar" style="width: 95%; background: var(--gold-gradient);" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="fw-bold">Custom Graphics Customization</span>
+                <span class="text-gold" style="color: var(--gold-primary);">100% Unique</span>
+              </div>
+              <div class="progress" style="height: 6px; background: rgba(255,255,255,0.1);">
+                <div class="progress-bar" role="progressbar" style="width: 100%; background: var(--gold-gradient);" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. INTERACTIVE BOOTH SHOWCASE (TABBED INTERFACE)
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Live Demonstration</span>
+      <h2>Interactive Booth Showcase</h2>
+    </div>
+
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-4" data-aos="fade-right">
+        <div class="d-flex flex-column gap-3">
+          <button class="showcase-tab-btn active" onclick="switchShowcaseTab(this, 'showcase-360', 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80')">
+            360° Video Booth
+          </button>
+          <button class="showcase-tab-btn" onclick="switchShowcaseTab(this, 'showcase-mirror', 'https://images.unsplash.com/photo-1522158673376-3c72b2282301?auto=format&fit=crop&w=800&q=80')">
+            Interactive Mirror Booth
+          </button>
+          <button class="showcase-tab-btn" onclick="switchShowcaseTab(this, 'showcase-glam', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80')">
+            Glam Portrait Booth
+          </button>
+        </div>
+      </div>
+      
+      <div class="col-lg-8" data-aos="fade-left">
+        <div class="floating-glass-card p-4">
+          <div class="row align-items-center g-4">
+            <div class="col-md-6">
+              <img id="showcase-img" src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Booth Style Preview" class="showcase-display-img img-fluid">
+            </div>
+            <div class="col-md-6">
+              <div id="showcase-desc-content">
+                <h3 class="h4 mb-3" id="showcase-title">360° Video Booth</h3>
+                <p class="small text-secondary" id="showcase-text">
+                  Make your guests feel like stars. A robotic arm rotates a high-speed camera around a custom platform, recording stunning slow-motion video with customized brand elements.
+                </p>
+                <ul class="list-unstyled mt-3 small text-secondary">
+                  <li><i data-lucide="check" class="text-gold me-2" style="width: 14px; color: var(--gold-primary);"></i> Slow-motion rendering</li>
+                  <li><i data-lucide="check" class="text-gold me-2" style="width: 14px; color: var(--gold-primary);"></i> Custom music overlay</li>
+                  <li><i data-lucide="check" class="text-gold me-2" style="width: 14px; color: var(--gold-primary);"></i> Instant QR code delivery</li>
+                </ul>
+                <a href="booth-styles.html" class="btn-gold-primary mt-4 py-2 px-4">Full Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. EVENT EXPERIENCE TIMELINE
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Our Delivery Flow</span>
+        <h2>The Luxe Experience Journey</h2>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="floating-glass-card h-100 text-center">
+            <div class="category-icon mb-4"><i data-lucide="edit-3"></i></div>
+            <h4 class="h5">1. Bespoke Customization</h4>
+            <p class="small text-secondary">Our digital artists collaborate with you to create unique overlays, custom templates, and interface themes.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="floating-glass-card h-100 text-center">
+            <div class="category-icon mb-4"><i data-lucide="truck"></i></div>
+            <h4 class="h5">2. Seamless Setup</h4>
+            <p class="small text-secondary">We deliver and configure the entire system 2 hours prior to start. Cables managed, lighting fully calibrated.</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="floating-glass-card h-100 text-center">
+            <div class="category-icon mb-4"><i data-lucide="party-popper"></i></div>
+            <h4 class="h5">3. Dedicated Guest Hosts</h4>
+            <p class="small text-secondary">Our styling attendants invite guests, direct setups, and manage prints, maintaining excellent energy levels.</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="floating-glass-card h-100 text-center">
+            <div class="category-icon mb-4"><i data-lucide="cloud-lightning"></i></div>
+            <h4 class="h5">4. Immediate Delivery</h4>
+            <p class="small text-secondary">A post-event link compiles all guest files, including print templates, GIFs, and raw images in a secure gallery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. CUSTOMER STORIES / CASE STUDIES
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Real Impact</span>
+      <h2>Client Success Stories</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Case Study 1 -->
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="floating-glass-card p-4 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <span class="text-gold fw-bold small text-uppercase" style="color: var(--gold-primary);">Stripe Global Summit</span>
+            <h3 class="h4 mt-2">Connecting 1,200 Attendees Digitally</h3>
+            <p class="small text-secondary mt-3">We deployed three custom-branded open-air booths with real-time text delivery. Integrated data capture yielded 95% registration rates and over 4,000 brand social shares.</p>
+          </div>
+          <div class="mt-4 pt-3 border-top border-glass d-flex justify-content-between text-gold font-monospace" style="color: var(--gold-primary);">
+            <span>+45% Brand Impressions</span>
+            <span>100% Opt-In</span>
+          </div>
+        </div>
+      </div>
+      <!-- Case Study 2 -->
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="floating-glass-card p-4 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <span class="text-gold fw-bold small text-uppercase" style="color: var(--gold-primary);">The Waldorf Wedding Gala</span>
+            <h3 class="h4 mt-2">Studio-Grade Glam Portraits</h3>
+            <p class="small text-secondary mt-3">A Hollywood Glam style black and white booth setup, complete with custom physical prints and an exquisite gold leather guest book. Over 300 guests received printed memories.</p>
+          </div>
+          <div class="mt-4 pt-3 border-top border-glass d-flex justify-content-between text-gold font-monospace" style="color: var(--gold-primary);">
+            <span>300+ Prints Delivered</span>
+            <span>5-Star Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. FAQ PREVIEW ACCORDION
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Quick Answers</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="accordion faq-accordion" id="faq-accordion-home2">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-h2-1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-h2-1" aria-expanded="true" aria-controls="collapse-h2-1">
+                  How much space is required for the booth setup?
+                </button>
+              </h3>
+              <div id="collapse-h2-1" class="accordion-collapse collapse show" aria-labelledby="heading-h2-1" data-bs-parent="#faq-accordion-home2">
+                <div class="accordion-body">
+                  Most setups, including the Mirror and Glam booths, require a clear 10ft x 10ft flat space with access to a dedicated standard wall power outlet within 15ft.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-h2-2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-h2-2" aria-expanded="false" aria-controls="collapse-h2-2">
+                  Can we brand the booth outer wraps and screens?
+                </button>
+              </h3>
+              <div id="collapse-h2-2" class="accordion-collapse collapse" aria-labelledby="heading-h2-2" data-bs-parent="#faq-accordion-home2">
+                <div class="accordion-body">
+                  Absolutely! For brand activations or corporate galas, we offer full-body vinyl custom wrapping and themed splash screen configurations for a unified presentation.
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-5">
+            <a href="faq.html" class="btn-glass-secondary">View All FAQs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. FINAL CTA
+       ========================================================================== -->
+  <section class="section-padding container text-center">
+    <div class="floating-glass-card p-5" data-aos="zoom-in" style="background: linear-gradient(to right, rgba(0,0,0,0.95), rgba(212,175,55,0.02)); border: 1px solid var(--gold-primary);">
+      <span class="section-subtitle">Secure Your Reservation</span>
+      <h2 class="text-white mb-4">Elevate Your Next Luxury Event</h2>
+      <p class="text-white-50 mb-5 max-width-600 mx-auto">Contact our concierge team to design your custom interactive booth experience.</p>
+      <div class="button-group">
+        <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        <a href="pricing.html" class="btn-glass-secondary">View Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          </a>
+          <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booth-styles.html">Booth Styles</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="faq.html">FAQ & Reviews</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4>Inquire</h4>
+          <p class="small mb-3">100 Luxury Avenue, Suite 2026<br>Beverly Hills, CA 90210</p>
+          <p class="small mb-2"><i data-lucide="mail" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> booking@luxebooth.com</p>
+          <p class="small"><i data-lucide="phone" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> (800) 555-LUXE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUXEBOOTH Premium Rentals. All Rights Reserved. Crafted for visual excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Dynamic switcher for the interactive showcase tabs
+    function switchShowcaseTab(button, tabId, imgUrl) {
+      // Deactivate all buttons
+      document.querySelectorAll('.showcase-tab-btn').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const img = document.getElementById('showcase-img');
+      const title = document.getElementById('showcase-title');
+      const text = document.getElementById('showcase-text');
+
+      // Animating the image transition using GSAP
+      gsap.to(img, {
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.3,
+        onComplete: () => {
+          img.setAttribute('src', imgUrl);
+          
+          if (tabId === 'showcase-360') {
+            title.textContent = '360° Video Booth';
+            text.textContent = 'Make your guests feel like stars. A robotic arm rotates a high-speed camera around a custom platform, recording stunning slow-motion video with customized brand elements.';
+          } else if (tabId === 'showcase-mirror') {
+            title.textContent = 'Interactive Mirror Booth';
+            text.textContent = 'A full-length digital touchscreen mirror that displays interactive animations, allows guests to draw signatures directly onto the screen, and prints in seconds.';
+          } else if (tabId === 'showcase-glam') {
+            title.textContent = 'Glam Portrait Booth';
+            text.textContent = 'Get the legendary Kardashian black-and-white look. Features specialized studio softboxes and proprietary skin-smoothing filters for flawless outputs.';
+          }
+
+          gsap.to(img, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

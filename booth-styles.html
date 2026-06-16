@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booth Styles | LUXEBOOTH Premium Rental</title>
+  <meta name="description" content="Explore our premium booth selection: 360 robotic videos, Kardashian-style Glam portrait filters, interactive mirror screens, open-air DSLR hubs, and roaming cameras.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z%22/><circle cx=%2212%22 cy=%2213%22 r=%223%22/></svg>">
+  
+  <!-- CSS Library CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Core Styles -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <style>
+    .style-row {
+      margin-bottom: 8rem;
+    }
+    .style-row:last-child {
+      margin-bottom: 0;
+    }
+    .style-img-wrapper {
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-glass);
+      overflow: hidden;
+      aspect-ratio: 16/11;
+      box-shadow: var(--shadow-glass);
+    }
+    .style-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+    .style-row:hover .style-img-wrapper img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="premium-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+      </a>
+
+      <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="booth-styles.html" class="nav-link">Booth Styles</a></li>
+          <li><a href="pricing.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="faq.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <!-- Mobile & Tablet menu controls -->
+          <li class="mobile-menu-controls">
+            <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+              <i data-lucide="moon"></i>
+            </button>
+            <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+              <i data-lucide="arrow-left-right"></i>
+            </button>
+            <a href="contact.html" class="btn-gold-primary">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header controls for Desktop -->
+      <div class="header-controls">
+        <div class="header-ctas">
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
+        <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       BOOTH STYLES HERO
+       ========================================================================== -->
+  <section class="section-padding container text-center" style="margin-top: var(--nav-height);">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Exquisite Aesthetics</span>
+      <h1 class="h1">Luxury Booth Showcase</h1>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6 SHOWCASE SECTIONS (ALTERNATING DESIGN)
+       ========================================================================== -->
+  <section class="container mb-5">
+    
+    <!-- 1. 360 Booth -->
+    <div class="row align-items-center g-5 style-row">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="style-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" alt="360 Video Booth setup">
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <span class="section-subtitle">High-Fidelity Action</span>
+        <h2 class="text-start mb-3">Robotic 360° Video Booth</h2>
+        <p class="text-secondary mb-4">Make your guests feel like stars. A mechanical camera arm revolves around a custom platform, capturing high-resolution slow-motion videos that sync with personalized music files and branding frames.</p>
+        
+        <div class="row mb-4">
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Core Features</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Slow-motion rendering</li>
+              <li>Robotic rotation speed</li>
+              <li>LED platform underglow</li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Best For</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Brand Activations</li>
+              <li>Corporate Galas</li>
+              <li>Festivals & Concerts</li>
+            </ul>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold-primary">Select 360 Booth</a>
+      </div>
+    </div>
+
+    <!-- 2. Mirror Booth -->
+    <div class="row align-items-center g-5 style-row flex-lg-row-reverse">
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="style-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1522158673376-3c72b2282301?auto=format&fit=crop&w=1200&q=80" alt="Interactive Mirror Photo Booth">
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-subtitle">Interactive Magic</span>
+        <h2 class="text-start mb-3">Interactive Touch Mirror Booth</h2>
+        <p class="text-secondary mb-4">A stunning full-length mirror with high-definition digital interfaces hidden behind standard reflective glass. Displays vibrant touch animations and lets guests write signatures or draw emojis directly onto prints.</p>
+        
+        <div class="row mb-4">
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Core Features</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Interactive interface screen</li>
+              <li>Signature drawing tools</li>
+              <li>Instant dye-sub prints</li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Best For</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Luxury Weddings</li>
+              <li>Charity Fundraisers</li>
+              <li>Sweet Sixteen Parties</li>
+            </ul>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold-primary">Select Mirror Booth</a>
+      </div>
+    </div>
+
+    <!-- 3. Glam Booth -->
+    <div class="row align-items-center g-5 style-row">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="style-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" alt="Glam Portrait Booth style">
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <span class="section-subtitle">Hollywood Flawless</span>
+        <h2 class="text-start mb-3">Luxury Glam Portrait Booth</h2>
+        <p class="text-secondary mb-4">Inspired by celebrity photography. We combine high-contrast monochrome digital processing, professional beauty dish diffusers, and skin-smoothing filters to output red carpet ready portrait prints.</p>
+        
+        <div class="row mb-4">
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Core Features</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Skin-smoothing algorithm</li>
+              <li>High-contrast B&W processing</li>
+              <li>Studio lighting modifiers</li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Best For</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Black-Tie Galas</li>
+              <li>Fashion Shows</li>
+              <li>VIP Red Carpet Events</li>
+            </ul>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold-primary">Select Glam Booth</a>
+      </div>
+    </div>
+
+    <!-- 4. Open-Air Booth -->
+    <div class="row align-items-center g-5 style-row flex-lg-row-reverse">
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="style-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80" alt="Open Air Photo Booth Design">
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-subtitle">High capacity</span>
+        <h2 class="text-start mb-3">Classic Open-Air Studio Booth</h2>
+        <p class="text-secondary mb-4">A sleek, open-concept installation that lets up to 12 guests pose in a single frame. Features professional 24MP DSLR cameras and custom fabric backdrop layers.</p>
+        
+        <div class="row mb-4">
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Core Features</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>24MP DSLR camera sensor</li>
+              <li>Wide-angle prime lenses</li>
+              <li>10ft backdrops choice</li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Best For</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Family Reunions</li>
+              <li>Holiday Celebrations</li>
+              <li>Corporate Exhibitions</li>
+            </ul>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold-primary">Select Open-Air Booth</a>
+      </div>
+    </div>
+
+    <!-- 5. GIF Booth -->
+    <div class="row align-items-center g-5 style-row">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="style-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80" alt="GIF Photo Booth interactive">
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <span class="section-subtitle">Vibrant Motion</span>
+        <h2 class="text-start mb-3">Dynamic GIF & Boomerang Booth</h2>
+        <p class="text-secondary mb-4">Capture fast movement and burst loops. Standard layouts stitch four consecutive photos into high-energy animations or looping boomerangs overlayed with logos.</p>
+        
+        <div class="row mb-4">
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Core Features</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Boomerang looping clips</li>
+              <li>Animated digital filters</li>
+              <li>Instant text download</li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Best For</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Birthday Parties</li>
+              <li>Bar/Bat Mitzvahs</li>
+              <li>College Festivals</li>
+            </ul>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold-primary">Select GIF Booth</a>
+      </div>
+    </div>
+
+    <!-- 6. Roaming Booth -->
+    <div class="row align-items-center g-5 style-row flex-lg-row-reverse">
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="style-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=1200&q=80" alt="Roaming Photo Booth ringlight">
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-subtitle">Mobile Fun</span>
+        <h2 class="text-start mb-3">Handheld Roaming Ring-Light Booth</h2>
+        <p class="text-secondary mb-4">Bring the photo booth straight to the dance floor or cocktail tables. Our roaming hosts walk around holding mobile camera systems with integrated ring lights, taking snaps and air-dropping files.</p>
+        
+        <div class="row mb-4">
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Core Features</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Handheld layout mobility</li>
+              <li>Integrated ring lighting</li>
+              <li>Immediate Airdrop sharing</li>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <h4 class="h6 text-gold mb-2" style="color: var(--gold-primary);"><i data-lucide="check" class="d-inline-block me-1 align-middle" style="width: 14px;"></i> Best For</h4>
+            <ul class="list-unstyled text-secondary small">
+              <li>Cocktail Hours</li>
+              <li>Outdoor Weddings</li>
+              <li>High-Density Club Events</li>
+            </ul>
+          </div>
+        </div>
+        <a href="contact.html" class="btn-gold-primary">Select Roaming Booth</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       FINAL CTA
+       ========================================================================== -->
+  <section class="section-padding container text-center">
+    <div class="floating-glass-card p-5" data-aos="zoom-in" style="background: linear-gradient(to right, rgba(0,0,0,0.95), rgba(212,175,55,0.02)); border: 1px solid var(--gold-primary);">
+      <span class="section-subtitle">Book Luxe Styles</span>
+      <h2 class="text-white mb-4">Find the Perfect Setup for Your Venue</h2>
+      <p class="text-white-50 mb-5 max-width-600 mx-auto">Not sure which style matches? Our event design consultants will help map configurations to your space.</p>
+      <div class="button-group">
+        <a href="contact.html" class="btn-gold-primary">Consult With Us</a>
+        <a href="pricing.html" class="btn-glass-secondary">Check Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          </a>
+          <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booth-styles.html">Booth Styles</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="faq.html">FAQ & Reviews</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4>Inquire</h4>
+          <p class="small mb-3">100 Luxury Avenue, Suite 2026<br>Beverly Hills, CA 90210</p>
+          <p class="small mb-2"><i data-lucide="mail" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> booking@luxebooth.com</p>
+          <p class="small"><i data-lucide="phone" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> (800) 555-LUXE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUXEBOOTH Premium Rentals. All Rights Reserved. Crafted for visual excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

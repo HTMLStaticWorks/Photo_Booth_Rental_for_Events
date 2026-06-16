@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Booking | LUXEBOOTH Premium Rentals</title>
+  <meta name="description" content="Reserve your luxury photo booth rental. Direct inquiries, select packages, choose backdrops, and book date availability using our interactive event form.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z%22/><circle cx=%2212%22 cy=%2213%22 r=%223%22/></svg>">
+  
+  <!-- CSS Library CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Core Styles -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <style>
+    /* Custom Package Radio Selectors */
+    .package-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 639.98px) {
+      .package-selector-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .package-radio-label {
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-sm);
+      padding: 1rem;
+      text-align: center;
+      cursor: pointer;
+      display: block;
+      transition: var(--transition-smooth);
+      background: var(--bg-primary);
+    }
+    .package-radio-input {
+      display: none;
+    }
+    .package-radio-input:checked + .package-radio-label {
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.05);
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+    
+    /* Mock Map Styling */
+    .mock-map-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+    }
+    .map-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px dashed var(--gold-primary);
+      border-radius: 50%;
+      animation: pulse-map 8s linear infinite;
+    }
+    .map-circle:nth-child(1) { width: 150px; height: 150px; opacity: 0.8; }
+    .map-circle:nth-child(2) { width: 300px; height: 300px; opacity: 0.5; animation-delay: 2s; }
+    .map-circle:nth-child(3) { width: 450px; height: 450px; opacity: 0.2; animation-delay: 4s; }
+    @keyframes pulse-map {
+      0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+      50% { transform: translate(-50%, -50%) rotate(180deg) scale(1.05); }
+      100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="premium-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+      </a>
+
+      <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="booth-styles.html" class="nav-link">Booth Styles</a></li>
+          <li><a href="pricing.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="faq.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <!-- Mobile & Tablet menu controls -->
+          <li class="mobile-menu-controls">
+            <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+              <i data-lucide="moon"></i>
+            </button>
+            <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+              <i data-lucide="arrow-left-right"></i>
+            </button>
+            <a href="contact.html" class="btn-gold-primary">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header controls for Desktop -->
+      <div class="header-controls">
+        <div class="header-ctas">
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
+        <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       1. CONTACT HERO
+       ========================================================================== -->
+  <section class="section-padding container text-center" style="margin-top: var(--nav-height);">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Reserve Your Date</span>
+      <h1 class="h1">Begin the Luxe Event Design Process</h1>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       GRID DETAILS: LEFT INFO & MOCK MAP, RIGHT RESERVATION FORM
+       ========================================================================== -->
+  <section class="container mb-5">
+    <div class="row g-5">
+      
+      <!-- Left Column Details -->
+      <div class="col-lg-5" data-aos="fade-right">
+        
+        <!-- Contact Info Card -->
+        <div class="floating-glass-card mb-4">
+          <h3 class="h4 mb-4">Concierge Desk</h3>
+          
+          <div class="d-flex gap-3 mb-4">
+            <div class="text-gold" style="color: var(--gold-primary);"><i data-lucide="map-pin" style="width: 24px;"></i></div>
+            <div>
+              <h4 class="h6 mb-1">Corporate Headquarters</h4>
+              <p class="small text-secondary m-0">100 Luxury Avenue, Suite 2026<br>Beverly Hills, CA 90210</p>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="text-gold" style="color: var(--gold-primary);"><i data-lucide="mail" style="width: 24px;"></i></div>
+            <div>
+              <h4 class="h6 mb-1">Email Reservations</h4>
+              <p class="small text-secondary m-0">booking@luxebooth.com</p>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 mb-4">
+            <div class="text-gold" style="color: var(--gold-primary);"><i data-lucide="phone" style="width: 24px;"></i></div>
+            <div>
+              <h4 class="h6 mb-1">Concierge Line</h4>
+              <p class="small text-secondary m-0">(800) 555-LUXE</p>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3">
+            <div class="text-gold" style="color: var(--gold-primary);"><i data-lucide="clock" style="width: 24px;"></i></div>
+            <div>
+              <h4 class="h6 mb-1">Office Hours</h4>
+              <p class="small text-secondary m-0">Mon – Sun: 9:00 AM – 8:00 PM PST</p>
+            </div>
+          </div>
+          
+          <!-- Social links -->
+          <div class="mt-4 pt-4 border-top border-glass">
+            <h4 class="h6 mb-3">Connect Digitally</h4>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+              <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Area Map representation -->
+        <div class="mock-map-container">
+          <div class="map-circle"></div>
+          <div class="map-circle"></div>
+          <div class="map-circle"></div>
+          <div class="position-relative z-index-10 d-flex flex-column align-items-center justify-content-center h-100">
+            <i data-lucide="navigation" class="text-gold mb-3" style="width: 40px; height: 40px; color: var(--gold-primary); transform: rotate(45deg);"></i>
+            <h4 class="h5">Active Service Boundary</h4>
+            <p class="small text-secondary max-width-300 mx-auto mt-2">Free transport covers a 35-mile radius around Beverly Hills. Nationwide travel available for activations.</p>
+            <span class="badge" style="background: var(--gold-gradient); color: #000000; font-family: var(--font-body); padding: 0.5rem 1.25rem; font-weight: 700; border-radius: 20px;">Luxe Coverage Zone</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column Booking Form -->
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="floating-glass-card p-4 p-md-5">
+          <h3 class="h4 mb-4">Check Availability & Request Quote</h3>
+          
+          <form id="event-booking-form">
+            <div class="row">
+              <!-- Full Name -->
+              <div class="col-md-6 premium-form-group">
+                <label class="premium-form-label" for="full-name">Full Name *</label>
+                <input type="text" id="full-name" name="name" class="premium-form-control" placeholder="Johnathan Doe" required>
+              </div>
+              <!-- Email Address -->
+              <div class="col-md-6 premium-form-group">
+                <label class="premium-form-label" for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="premium-form-control" placeholder="john@example.com" required>
+              </div>
+              <!-- Phone Number -->
+              <div class="col-md-6 premium-form-group">
+                <label class="premium-form-label" for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" class="premium-form-control" placeholder="(555) 555-5555" required>
+              </div>
+              <!-- Event Date -->
+              <div class="col-md-6 premium-form-group">
+                <label class="premium-form-label" for="event-date">Event Date *</label>
+                <input type="date" id="event-date" name="date" class="premium-form-control" required>
+              </div>
+              <!-- Event Type -->
+              <div class="col-md-6 premium-form-group">
+                <label class="premium-form-label" for="event-type">Event Type *</label>
+                <select id="event-type" name="event_type" class="premium-form-control" required>
+                  <option value="" disabled selected>Select event class...</option>
+                  <option value="wedding">Wedding Reception</option>
+                  <option value="corporate">Corporate Gala / Activation</option>
+                  <option value="birthday">Birthday / Sweet Sixteen</option>
+                  <option value="festival">Music Festival / Public Event</option>
+                  <option value="other">Other Celebration</option>
+                </select>
+              </div>
+              <!-- Guest Count -->
+              <div class="col-md-6 premium-form-group">
+                <label class="premium-form-label" for="guest-count">Expected Guest Count *</label>
+                <input type="number" id="guest-count" name="guests" class="premium-form-control" placeholder="150" min="1" required>
+              </div>
+              <!-- Booth Type -->
+              <div class="col-md-12 premium-form-group">
+                <label class="premium-form-label" for="booth-type">Preferred Booth Style *</label>
+                <select id="booth-type" name="booth_style" class="premium-form-control" required>
+                  <option value="" disabled selected>Select hardware setup...</option>
+                  <option value="360">Robotic 360° Video Booth</option>
+                  <option value="mirror">Interactive Touch Mirror Booth</option>
+                  <option value="glam">Luxury Glam Portrait Booth</option>
+                  <option value="open-air">Classic Open-Air Studio Booth</option>
+                  <option value="gif">GIF & Boomerang loop Booth</option>
+                  <option value="roaming">Handheld Mobile Roaming Booth</option>
+                </select>
+              </div>
+              
+              <!-- Package Selector cards -->
+              <div class="col-md-12 premium-form-group">
+                <label class="premium-form-label">Select Rental Tier *</label>
+                <div class="package-selector-grid">
+                  <div>
+                    <input type="radio" name="package_selection" id="package-starter" value="starter" class="package-radio-input" checked required>
+                    <label for="package-starter" class="package-radio-label">
+                      <span class="d-block fw-bold small">Starter Tier</span>
+                      <span class="d-block small text-gold mt-1" style="color: var(--gold-primary);">$499 / 3 hrs</span>
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" name="package_selection" id="package-premium" value="premium" class="package-radio-input" required>
+                    <label for="package-premium" class="package-radio-label">
+                      <span class="d-block fw-bold small">Premium Tier</span>
+                      <span class="d-block small text-gold mt-1" style="color: var(--gold-primary);">$799 / 4 hrs</span>
+                    </label>
+                  </div>
+                  <div>
+                    <input type="radio" name="package_selection" id="package-luxury" value="luxury" class="package-radio-input" required>
+                    <label for="package-luxury" class="package-radio-label">
+                      <span class="d-block fw-bold small">Luxury Tier</span>
+                      <span class="d-block small text-gold mt-1" style="color: var(--gold-primary);">$1,299 / 4 hrs</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional Notes -->
+              <div class="col-md-12 premium-form-group">
+                <label class="premium-form-label" for="notes">Special Requirements & Backdrop Notes</label>
+                <textarea id="notes" name="notes" rows="4" class="premium-form-control" placeholder="Specify backdrop details, corporate wrap files, custom logos or layout requests..."></textarea>
+              </div>
+              
+              <!-- Submit CTA -->
+              <div class="col-md-12 mt-3 text-center">
+                <button type="submit" class="btn-gold-primary w-100">Send Inquiry Request</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FINAL CTA
+       ========================================================================== -->
+  <section class="section-padding container text-center">
+    <div class="floating-glass-card p-5" data-aos="zoom-in" style="background: linear-gradient(to right, rgba(0,0,0,0.95), rgba(212,175,55,0.02)); border: 1px solid var(--gold-primary);">
+      <span class="section-subtitle">Instant Direct Lines</span>
+      <h2 class="text-white mb-4">Planning a High-Scale Activation?</h2>
+      <p class="text-white-50 mb-5 max-width-600 mx-auto">Our marketing directors can coordinate customized enterprise installations, multiple active kiosks, API setups, and complex backdrops. Contact corporate directly.</p>
+      <div class="button-group">
+        <a href="mailto:corporate@luxebooth.com" class="btn-gold-primary">Corporate Mail</a>
+        <a href="tel:8005555893" class="btn-glass-secondary">Call Enterprise desk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          </a>
+          <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booth-styles.html">Booth Styles</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="faq.html">FAQ & Reviews</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4>Inquire</h4>
+          <p class="small mb-3">100 Luxury Avenue, Suite 2026<br>Beverly Hills, CA 90210</p>
+          <p class="small mb-2"><i data-lucide="mail" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> booking@luxebooth.com</p>
+          <p class="small"><i data-lucide="phone" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> (800) 555-LUXE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUXEBOOTH Premium Rentals. All Rights Reserved. Crafted for visual excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Auto select package based on query param if passed
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedPkg = urlParams.get('package');
+    if (selectedPkg) {
+      const radio = document.getElementById(`package-${selectedPkg}`);
+      if (radio) {
+        radio.checked = true;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages & Pricing | LUXEBOOTH Premium Rentals</title>
+  <meta name="description" content="View our premium photo booth pricing structures. Compare Starter, Premium, and Luxury packages. Simple pricing, custom add-ons, and detailed comparisons.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z%22/><circle cx=%2212%22 cy=%2213%22 r=%223%22/></svg>">
+  
+  <!-- CSS Library CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Core Styles -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <style>
+    /* Table Glass Design */
+    .comparison-table-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 2.5rem;
+      overflow-x: auto;
+      box-shadow: var(--shadow-glass);
+    }
+    .comparison-table {
+      width: 100%;
+      min-width: 800px;
+      border-collapse: collapse;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-glass);
+      text-align: center;
+    }
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+    [dir="rtl"] .comparison-table th:first-child,
+    [dir="rtl"] .comparison-table td:first-child {
+      text-align: right;
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table th {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--text-primary);
+    }
+    .comparison-table td {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+    
+    .addon-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--border-radius-lg);
+      padding: 2rem;
+      height: 100%;
+      transition: var(--transition-smooth);
+    }
+    .addon-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 10px 20px var(--gold-glow);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="premium-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+      </a>
+
+      <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="booth-styles.html" class="nav-link">Booth Styles</a></li>
+          <li><a href="pricing.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="faq.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <!-- Mobile & Tablet menu controls -->
+          <li class="mobile-menu-controls">
+            <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+              <i data-lucide="moon"></i>
+            </button>
+            <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+              <i data-lucide="arrow-left-right"></i>
+            </button>
+            <a href="contact.html" class="btn-gold-primary">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header controls for Desktop -->
+      <div class="header-controls">
+        <div class="header-ctas">
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
+        <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PRICING HERO
+       ========================================================================== -->
+  <section class="section-padding container text-center" style="margin-top: var(--nav-height);">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Invest in Memories</span>
+      <h1 class="h1">Tailored Packages & Transparent Rates</h1>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       1. 3 PREMIUM PRICING CARDS
+       ========================================================================== -->
+  <section class="container mb-5">
+    <div class="row g-4 align-items-stretch justify-content-center">
+      <!-- Starter Card -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-card">
+          <h3 class="pricing-title">Starter Package</h3>
+          <p class="text-muted">Perfect for intimate private gatherings</p>
+          <div class="pricing-price">$499<span>/ 3 Hours</span></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i> 1 Open-Air Photo Booth</li>
+            <li><i data-lucide="check"></i> DSLR Camera & Beauty lighting</li>
+            <li><i data-lucide="check"></i> Unlimited Digital Downloads</li>
+            <li><i data-lucide="check"></i> Custom Graphic Border Overlay</li>
+            <li><i data-lucide="check"></i> Web Link Photo Gallery</li>
+            <li><i data-lucide="check"></i> 1 Host Support Coordinator</li>
+          </ul>
+          <a href="contact.html?package=starter" class="btn-glass-secondary w-100">Select Starter</a>
+        </div>
+      </div>
+      
+      <!-- Premium Card (Highlighted) -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-card popular">
+          <span class="pricing-badge">Most Popular</span>
+          <h3 class="pricing-title">Premium Package</h3>
+          <p class="text-muted">Ideal for luxury weddings & birthday galas</p>
+          <div class="pricing-price">$799<span>/ 4 Hours</span></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i> 1 Mirror or Glam portrait Booth</li>
+            <li><i data-lucide="check"></i> Dye-Sub Smudge-Free speed printing</li>
+            <li><i data-lucide="check"></i> Curated Backdrop & Prop collections</li>
+            <li><i data-lucide="check"></i> Touchscreen sharing kiosk terminal</li>
+            <li><i data-lucide="check"></i> Gold-foil guestbook album creation</li>
+            <li><i data-lucide="check"></i> 2 Professional Host Attendants</li>
+          </ul>
+          <!-- Primary button on popular plan -->
+          <a href="contact.html?package=premium" class="btn-gold-primary w-100">Select Premium</a>
+        </div>
+      </div>
+      
+      <!-- Luxury Card -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="pricing-card">
+          <h3 class="pricing-title">Luxury Package</h3>
+          <p class="text-muted">Designed for brand activations & galas</p>
+          <div class="pricing-price">$1,299<span>/ 4 Hours</span></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i> 360° Slow-Motion Video Booth</li>
+            <li><i data-lucide="check"></i> High-speed mechanical rotating arm</li>
+            <li><i data-lucide="check"></i> Dynamic filters & customized music tracks</li>
+            <li><i data-lucide="check"></i> Custom vinyl cabinet wrappers</li>
+            <li><i data-lucide="check"></i> 2 Social sharing kiosk kiosks</li>
+            <li><i data-lucide="check"></i> Complete analytical data tracking</li>
+          </ul>
+          <a href="contact.html?package=luxury" class="btn-glass-secondary w-100">Select Luxury</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. COMPARISON TABLE
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Features Matrix</span>
+        <h2>Detailed Tier Comparison</h2>
+      </div>
+
+      <div class="comparison-table-wrapper" data-aos="fade-up">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature Specs</th>
+              <th>Starter Tier</th>
+              <th>Premium Tier</th>
+              <th>Luxury Tier</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rental Hours Included</td>
+              <td>3 Hours</td>
+              <td>4 Hours</td>
+              <td>4 Hours</td>
+            </tr>
+            <tr>
+              <td>Camera Hardware</td>
+              <td>DSLR 24.2 MP</td>
+              <td>DSLR 24.2 MP + Filters</td>
+              <td>4K slow-mo Video Cam</td>
+            </tr>
+            <tr>
+              <td>Physical Printing</td>
+              <td>Digital Only</td>
+              <td>Unlimited (Dye-Sub)</td>
+              <td>Unlimited (Dye-Sub/Video QR)</td>
+            </tr>
+            <tr>
+              <td>Backdrop Choices</td>
+              <td>Basic Solid Fabric</td>
+              <td>Premium Velvet/Glitter</td>
+              <td>Custom AI Digital backdrops</td>
+            </tr>
+            <tr>
+              <td>Prop kit Included</td>
+              <td>Standard cardstock</td>
+              <td>Custom themed collection</td>
+              <td>Creative custom props</td>
+            </tr>
+            <tr>
+              <td>Sharing Kiosk</td>
+              <td>Integrated Screen</td>
+              <td>1 Standalone Terminal</td>
+              <td>2 Standalone Terminals</td>
+            </tr>
+            <tr>
+              <td>Custom Vinyl Wraps</td>
+              <td>Not Available</td>
+              <td>Optional Add-on</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Data Analytics Report</td>
+              <td>No</td>
+              <td>No</td>
+              <td>Yes (PDF Delivery)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. ADD-ONS SECTION
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">A La Carte Options</span>
+      <h2>Upgrade Your Experience</h2>
+    </div>
+
+    <div class="row g-4">
+      <!-- Addon 1 -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="addon-card text-center">
+          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="plus-circle" style="width: 32px; height: 32px;"></i></div>
+          <h4 class="h6 mb-2">Extra Rental Hour</h4>
+          <p class="small text-secondary mb-3">Keep the celebration running longer.</p>
+          <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$150 / hr</div>
+        </div>
+      </div>
+      <!-- Addon 2 -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="addon-card text-center">
+          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="paint-brush" style="width: 32px; height: 32px;"></i></div>
+          <h4 class="h6 mb-2">Custom Cabinet Wrap</h4>
+          <p class="small text-secondary mb-3">Add vinyl branding logos/graphics.</p>
+          <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$350 flat</div>
+        </div>
+      </div>
+      <!-- Addon 3 -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="addon-card text-center">
+          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="camera" style="width: 32px; height: 32px;"></i></div>
+          <h4 class="h6 mb-2">Roaming Host Coverage</h4>
+          <p class="small text-secondary mb-3">Roaming ring light snaps photos.</p>
+          <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$120 / hr</div>
+        </div>
+      </div>
+      <!-- Addon 4 -->
+      <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="addon-card text-center">
+          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="book-open" style="width: 32px; height: 32px;"></i></div>
+          <h4 class="h6 mb-2">Luxury Leather Album</h4>
+          <p class="small text-secondary mb-3">Printed guestbook filled with snaps.</p>
+          <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$100 flat</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. PRICING FAQ SECTION
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">FAQ</span>
+        <h2>Booking & Pricing Policies</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="accordion faq-accordion" id="pricing-faq-accordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="faq-heading-1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-1" aria-expanded="true" aria-controls="faq-collapse-1">
+                  Is a booking deposit required?
+                </button>
+              </h3>
+              <div id="faq-collapse-1" class="accordion-collapse collapse show" aria-labelledby="faq-heading-1" data-bs-parent="#pricing-faq-accordion">
+                <div class="accordion-body">
+                  Yes. We require a 30% non-refundable booking deposit to secure your date. The remaining balance is auto-billed 14 days prior to your event schedule.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="faq-heading-2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapse-2" aria-expanded="false" aria-controls="faq-collapse-2">
+                  Are setup and travel costs included?
+                </button>
+              </h3>
+              <div id="faq-collapse-2" class="accordion-collapse collapse" aria-labelledby="faq-heading-2" data-bs-parent="#pricing-faq-accordion">
+                <div class="accordion-body">
+                  Setup and teardown are fully included. Travel is free for locations within 35 miles of our office. Locations beyond 35 miles are billed at $1.50 per mile.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          </a>
+          <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booth-styles.html">Booth Styles</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="faq.html">FAQ & Reviews</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4>Inquire</h4>
+          <p class="small mb-3">100 Luxury Avenue, Suite 2026<br>Beverly Hills, CA 90210</p>
+          <p class="small mb-2"><i data-lucide="mail" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> booking@luxebooth.com</p>
+          <p class="small"><i data-lucide="phone" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> (800) 555-LUXE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUXEBOOTH Premium Rentals. All Rights Reserved. Crafted for visual excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

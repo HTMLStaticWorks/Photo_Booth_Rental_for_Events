@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews & FAQ | LUXEBOOTH Premium Rentals</title>
+  <meta name="description" content="Read our client reviews and explore answers to common questions. Learn about space setups, custom corporate wraps, print types, and cancellation policies.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z%22/><circle cx=%2212%22 cy=%2213%22 r=%223%22/></svg>">
+  
+  <!-- CSS Library CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Core Styles -->
+  <link href="css/style.css" rel="stylesheet">
+  
+  <style>
+    /* Video Review Cards */
+    .video-review-card {
+      position: relative;
+      border-radius: var(--border-radius-lg);
+      border: 1px solid var(--border-glass);
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      cursor: pointer;
+    }
+    .video-review-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-smooth);
+    }
+    .video-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: var(--gold-gradient);
+      color: #000000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px var(--gold-glow);
+      transition: var(--transition-smooth);
+    }
+    .video-review-card:hover img {
+      transform: scale(1.04);
+    }
+    .video-review-card:hover .video-play-btn {
+      transform: translate(-50%, -50%) scale(1.1);
+      box-shadow: 0 8px 25px var(--gold-glow);
+    }
+    .video-review-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="premium-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+      </a>
+
+      <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="booth-styles.html" class="nav-link">Booth Styles</a></li>
+          <li><a href="pricing.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="faq.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <!-- Mobile & Tablet menu controls -->
+          <li class="mobile-menu-controls">
+            <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+              <i data-lucide="moon"></i>
+            </button>
+            <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+              <i data-lucide="arrow-left-right"></i>
+            </button>
+            <a href="contact.html" class="btn-gold-primary">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header controls for Desktop -->
+      <div class="header-controls">
+        <div class="header-ctas">
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
+        <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       FAQ & REVIEW HERO
+       ========================================================================== -->
+  <section class="section-padding container text-center" style="margin-top: var(--nav-height);">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Client Experiences</span>
+      <h1 class="h1">Testimonials & Frequently Asked Questions</h1>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       1. TEXT REVIEWS & STAR RATINGS
+       ========================================================================== -->
+  <section class="container mb-5">
+    <div class="row g-4">
+      <!-- Review 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="floating-glass-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=100&h=100&q=80" alt="Sarah J." class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--gold-primary);">
+            <div>
+              <h4 class="h6 mb-1">Sarah & Michael J.</h4>
+              <div class="text-gold" style="color: var(--gold-primary); font-size: 0.85rem;">
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+              </div>
+            </div>
+          </div>
+          <p class="small text-secondary">"The Glam Booth was a huge hit at our wedding! Every picture looked flawless with the Hollywood lighting filter. Everyone could download their files in seconds."</p>
+        </div>
+      </div>
+      <!-- Review 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="floating-glass-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=100&h=100&q=80" alt="Marcus T." class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--gold-primary);">
+            <div>
+              <h4 class="h6 mb-1">Marcus T.</h4>
+              <div class="text-gold" style="color: var(--gold-primary); font-size: 0.85rem;">
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+              </div>
+            </div>
+          </div>
+          <p class="small text-secondary">"Outstanding setup for our annual product showcase. The branded vinyl wrapping and customized UI on the sharing kiosk matched our brand aesthetics seamlessly."</p>
+        </div>
+      </div>
+      <!-- Review 3 -->
+      <div class="col-lg-4 col-sm-12" data-aos="fade-up" data-aos-delay="300">
+        <div class="floating-glass-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=100&h=100&q=80" alt="Elena K." class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--gold-primary);">
+            <div>
+              <h4 class="h6 mb-1">Elena K.</h4>
+              <div class="text-gold" style="color: var(--gold-primary); font-size: 0.85rem;">
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+                <i data-lucide="star" class="d-inline-block fill-current" style="width: 14px;"></i>
+              </div>
+            </div>
+          </div>
+          <p class="small text-secondary">"The 360 Video Booth completely stole the show! It kept our birthday guests laughing and posing all evening. Exceptional coordinators and pristine gear."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. MOCK VIDEO REVIEWS
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Video Reviews</span>
+      <h2>Watch Live Guest Reactions</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Video 1 -->
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="video-review-card" onclick="alert('Playing user video review...')">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Gala guests video">
+          <div class="video-play-btn"><i data-lucide="play" style="fill: #000000;"></i></div>
+          <div class="video-review-overlay">
+            <h4 class="h6 m-0">The Sterling Wedding Reception (360° Booth)</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Video 2 -->
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="video-review-card" onclick="alert('Playing user video review...')">
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Corporate gala video">
+          <div class="video-play-btn"><i data-lucide="play" style="fill: #000000;"></i></div>
+          <div class="video-review-overlay">
+            <h4 class="h6 m-0">Stripe Annual Developer Gala (Mirror Booth)</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. EXTENSIVE FAQ ACCORDION (BOOKING, SETUP, BRANDING, TRAVEL, PRINTS, CANCELLATION)
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Detailed FAQ</span>
+        <h2>Answers to Every Question</h2>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-9" data-aos="fade-up">
+          <div class="accordion faq-accordion" id="comprehensive-faq">
+            
+            <!-- Booking Process -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-faq-1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-1" aria-expanded="true" aria-controls="collapse-faq-1">
+                  What is the booking process?
+                </button>
+              </h3>
+              <div id="collapse-faq-1" class="accordion-collapse collapse show" aria-labelledby="heading-faq-1" data-bs-parent="#comprehensive-faq">
+                <div class="accordion-body">
+                  To reserve your date, check our online availability calendar, fill out the booking form, and make a 30% non-refundable deposit. Once received, our designers reach out to start graphic layout designs. Balance payment is charged 14 days prior to setup date.
+                </div>
+              </div>
+            </div>
+
+            <!-- Setup Requirements -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-faq-2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2" aria-expanded="false" aria-controls="collapse-faq-2">
+                  What are the space and power setup requirements?
+                </button>
+              </h3>
+              <div id="collapse-faq-2" class="accordion-collapse collapse" aria-labelledby="heading-faq-2" data-bs-parent="#comprehensive-faq">
+                <div class="accordion-body">
+                  Most booth setups require a clear flat space of at least 10ft x 10ft. The height should clear 8.5ft for standard backdrops. We require a dedicated wall outlet within 15ft of setup (running other lighting systems or bands on the same outlet causes fuse issues).
+                </div>
+              </div>
+            </div>
+
+            <!-- Custom Branding -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-faq-3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-3" aria-expanded="false" aria-controls="collapse-faq-3">
+                  Can we design custom logos and booth branding wraps?
+                </button>
+              </h3>
+              <div id="collapse-faq-3" class="accordion-collapse collapse" aria-labelledby="heading-faq-3" data-bs-parent="#comprehensive-faq">
+                <div class="accordion-body">
+                  Absolutely. Custom vinyl wraps for the booth cabinet shell, custom touchscreen splash screens, and customized overlay templates can all be configured for corporate activations and branding events.
+                </div>
+              </div>
+            </div>
+
+            <!-- Travel Areas -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-faq-4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-4" aria-expanded="false" aria-controls="collapse-faq-4">
+                  Which geographical areas do you travel to?
+                </button>
+              </h3>
+              <div id="collapse-faq-4" class="accordion-collapse collapse" aria-labelledby="heading-faq-4" data-bs-parent="#comprehensive-faq">
+                <div class="accordion-body">
+                  We cover the entire metro area. Travel up to 35 miles from our Beverly Hills office is fully free of charge. Travel outside this 35-mile radius is billed at $1.50 per mile (round trip).
+                </div>
+              </div>
+            </div>
+
+            <!-- Print Options -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-faq-5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-5" aria-expanded="false" aria-controls="collapse-faq-5">
+                  What physical printing sizes and options are available?
+                </button>
+              </h3>
+              <div id="collapse-faq-5" class="accordion-collapse collapse" aria-labelledby="heading-faq-5" data-bs-parent="#comprehensive-faq">
+                <div class="accordion-body">
+                  We support classic 2x6 photo strips, larger 4x6 printouts, and custom metallic film prints. You can select single prints for guests or duplicates (one goes to guests, one goes into the guest leather album).
+                </div>
+              </div>
+            </div>
+
+            <!-- Cancellation Policy -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="heading-faq-6">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-6" aria-expanded="false" aria-controls="collapse-faq-6">
+                  What is your cancellation and rescheduling policy?
+                </button>
+              </h3>
+              <div id="collapse-faq-6" class="accordion-collapse collapse" aria-labelledby="heading-faq-6" data-bs-parent="#comprehensive-faq">
+                <div class="accordion-body">
+                  Cancellations made more than 30 days prior to event will be refunded everything except the initial 30% deposit. Within 30 days of event, payments are non-refundable. Rescheduling is free of charge up to 14 days before setup, subject to calendar availability.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          </a>
+          <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booth-styles.html">Booth Styles</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="faq.html">FAQ & Reviews</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4>Inquire</h4>
+          <p class="small mb-3">100 Luxury Avenue, Suite 2026<br>Beverly Hills, CA 90210</p>
+          <p class="small mb-2"><i data-lucide="mail" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> booking@luxebooth.com</p>
+          <p class="small"><i data-lucide="phone" class="d-inline-block me-2 align-middle text-gold" style="width: 16px; color: var(--gold-primary);"></i> (800) 555-LUXE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUXEBOOTH Premium Rentals. All Rights Reserved. Crafted for visual excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

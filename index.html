@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Photo Booth Rental for Events | Luxury Event Experiences</title>
+  <meta name="description"
+    content="Elevate your wedding, corporate event, or activation with our high-end studio-quality photo booth rentals. Instant printing, 360 videos, and social sharing.">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z%22/><circle cx=%2212%22 cy=%2213%22 r=%223%22/></svg>">
+
+  <!-- CSS Library CDNs -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Core Styles -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="premium-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+      </a>
+
+      <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="booth-styles.html" class="nav-link">Booth Styles</a></li>
+          <li><a href="pricing.html" class="nav-link">Packages</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="faq.html" class="nav-link">Testimonials</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <!-- Mobile & Tablet menu controls -->
+          <li class="mobile-menu-controls">
+            <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+              <i data-lucide="moon"></i>
+            </button>
+            <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+              <i data-lucide="arrow-left-right"></i>
+            </button>
+            <a href="contact.html" class="btn-gold-primary">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header controls for Desktop -->
+      <div class="header-controls">
+        <div class="header-ctas">
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
+        <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+          <i data-lucide="arrow-left-right"></i>
+        </button>
+        <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       1. HERO SECTION
+       ========================================================================== -->
+  <section class="hero-cinema">
+    <div class="hero-cinema-bg"
+      style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80');">
+    </div>
+    <div class="hero-cinema-overlay"></div>
+    <div class="hero-content text-center">
+      <span class="hero-subtitle">Redefining Event Entertainment</span>
+      <h1 class="hero-title text-white">Elite Studio-Quality Photo Booth Experiences</h1>
+      <p class="hero-desc text-white-50 mb-5 max-width-600 mx-auto">
+        Bring premium 4K DSLR photography, cinematic 360-degree video booths, and instant high-speed social sharing to
+        your luxury event.
+      </p>
+      <div class="button-group">
+        <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        <a href="pricing.html" class="btn-glass-secondary">View Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating statistics row -->
+  <section class="container mt-n5 position-relative z-index-10 mb-5">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6 hero-stats-card">
+        <div class="floating-glass-card text-center">
+          <h3 class="text-gold" style="color: var(--gold-primary); font-size: 2.5rem;">500+</h3>
+          <p class="m-0 text-secondary">Premium Events Completed</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 hero-stats-card">
+        <div class="floating-glass-card text-center">
+          <h3 class="text-gold" style="color: var(--gold-primary); font-size: 2.5rem;">150K+</h3>
+          <p class="m-0 text-secondary">Instant Studio Prints Delivered</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12 hero-stats-card">
+        <div class="floating-glass-card text-center">
+          <h3 class="text-gold" style="color: var(--gold-primary); font-size: 2.5rem;">100%</h3>
+          <p class="m-0 text-secondary">Five-Star Experience Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. TRUSTED BY BRANDS
+       ========================================================================== -->
+  <section class="brand-ticker-container">
+    <div class="brand-ticker-wrapper">
+      <span class="brand-logo-item">APPLE</span>
+      <span class="brand-logo-item">STRIPE</span>
+      <span class="brand-logo-item">AIRBNB</span>
+      <span class="brand-logo-item">NETFLIX</span>
+      <span class="brand-logo-item">GOOGLE</span>
+      <span class="brand-logo-item">NIKE</span>
+      <!-- Double for continuous scroll effect -->
+      <span class="brand-logo-item">APPLE</span>
+      <span class="brand-logo-item">STRIPE</span>
+      <span class="brand-logo-item">AIRBNB</span>
+      <span class="brand-logo-item">NETFLIX</span>
+      <span class="brand-logo-item">GOOGLE</span>
+      <span class="brand-logo-item">NIKE</span>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. BOOTH COLLECTION (PREMIUM CARDS)
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Choose Your Perfect Setup</span>
+      <h2>Our Premium Booth Collection</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- 360 Video Booth -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="photo-booth-card" onclick="location.href='booth-styles.html'">
+          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80"
+            alt="360 Video Booth">
+          <div class="photo-booth-info">
+            <h3 class="photo-booth-title">360° Video Booth</h3>
+            <p class="photo-booth-details">Cinematic slow-motion video captures with custom branding overlays.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Mirror Booth -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="photo-booth-card" onclick="location.href='booth-styles.html'">
+          <img src="https://www.djcwest.com/wp-content/uploads/2025/06/Mirror-Booth-Rental-Phoenix-2-1-683x1024.jpg"
+            alt="Interactive Mirror Booth">
+          <div class="photo-booth-info">
+            <h3 class="photo-booth-title">Interactive Mirror Booth</h3>
+            <p class="photo-booth-details">Full-length touch display featuring custom animations and print creation.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Glam Booth -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="photo-booth-card" onclick="location.href='booth-styles.html'">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+            alt="Glam Booth">
+          <div class="photo-booth-info">
+            <h3 class="photo-booth-title">Luxury Glam Booth</h3>
+            <p class="photo-booth-details">Hollywood-style black and white filters with instant skin smoothing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. EVENT CATEGORIES
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Tailored Packages</span>
+        <h2>Curated Event Solutions</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="gem"></i>
+            </div>
+            <h3 class="h4">Weddings</h3>
+            <p class="text-secondary small mt-3">Exquisite guest books, premium gold setups, and bespoke templates
+              matching your theme perfectly.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <h3 class="h4">Corporate Events</h3>
+            <p class="text-secondary small mt-3">Custom vinyl wraps, live metrics dashboard, and branded social sharing
+              templates for activations.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="cake"></i>
+            </div>
+            <h3 class="h4">Birthdays & Socials</h3>
+            <p class="text-secondary small mt-3">Curated custom props, dynamic backdrops, and vibrant designs
+              celebrating your special milestone.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="category-card">
+            <div class="category-icon">
+              <i data-lucide="award"></i>
+            </div>
+            <h3 class="h4">Brand Activations</h3>
+            <p class="text-secondary small mt-3">High-scale setups with green screen rendering, CRM data capture, and
+              customized email deliveries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. WHY CHOOSE US
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="section-subtitle">Unmatched Quality</span>
+        <h2 class="mb-4" style="font-size: 2.5rem; text-align: left;">High-Performance Event Technology Built to Impress
+        </h2>
+        <p class="mb-5 text-secondary">
+          We combine studio-grade photography components, elite software systems, and high-speed delivery networks to
+          give your guests a seamless and luxurious photo experience.
+        </p>
+
+        <div class="feature-box">
+          <div class="feature-box-icon">
+            <i data-lucide="aperture"></i>
+          </div>
+          <div>
+            <h4 class="h5">Pro DSLR Lighting & Cameras</h4>
+            <p class="small text-secondary m-0">No grainy tablets. We use 24MP DSLR cameras and professional flash
+              systems for studio-quality images.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-box-icon">
+            <i data-lucide="share-2"></i>
+          </div>
+          <div>
+            <h4 class="h5">Instant Live Sharing Kiosk</h4>
+            <p class="small text-secondary m-0">Text, email, or scan QR codes to download photos instantly right from
+              our interactive sharing screen.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-box-icon">
+            <i data-lucide="printer"></i>
+          </div>
+          <div>
+            <h4 class="h5">Dye-Sublimation Speed Printing</h4>
+            <p class="small text-secondary m-0">Waterproof, smudge-free physical prints develop in under 8 seconds so
+              queues flow smoothly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="position-relative">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
+            alt="Guests posing at event" class="img-fluid rounded shadow-lg"
+            style="border: 1px solid var(--border-glass);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. FEATURED GALLERY PREVIEW
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Live Captures</span>
+        <h2>Recent Event Highlights</h2>
+      </div>
+
+      <div class="row g-4">
+        <!-- Item 1 -->
+        <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+          <a href="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"
+            class="gallery-item-link">
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80"
+                alt="Wedding celebration">
+              <div class="gallery-overlay">
+                <i data-lucide="maximize" class="gallery-zoom-icon"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Item 2 -->
+        <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80"
+            class="gallery-item-link">
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80"
+                alt="Corporate gala event">
+              <div class="gallery-overlay">
+                <i data-lucide="maximize" class="gallery-zoom-icon"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Item 3 -->
+        <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+          <a href="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80"
+            class="gallery-item-link">
+            <div class="gallery-item">
+              <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80"
+                alt="Birthday celebration">
+              <div class="gallery-overlay">
+                <i data-lucide="maximize" class="gallery-zoom-icon"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="gallery.html" class="btn-glass-secondary">View Full Gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. PACKAGES PREVIEW
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">Pricing Guide</span>
+      <h2>Packages & Pricing</h2>
+    </div>
+
+    <div class="row g-4 align-items-stretch justify-content-center">
+      <!-- Plan 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-card">
+          <h3 class="pricing-title">Starter Package</h3>
+          <p class="text-muted">Perfect for intimate private gatherings</p>
+          <div class="pricing-price">$499<span>/ 3 Hours</span></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i> 1 Open-Air Photo Booth</li>
+            <li><i data-lucide="check"></i> Unlimited Digital Photos</li>
+            <li><i data-lucide="check"></i> 1 Backdrop Selection</li>
+            <li><i data-lucide="check"></i> Custom Layout Template</li>
+            <li><i data-lucide="check"></i> Pro On-Site Attendant</li>
+          </ul>
+          <a href="contact.html" class="btn-glass-secondary w-100">Select Starter</a>
+        </div>
+      </div>
+      <!-- Plan 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-card popular">
+          <span class="pricing-badge">Most Popular</span>
+          <h3 class="pricing-title">Premium Package</h3>
+          <p class="text-muted">Elevate your luxury wedding or party</p>
+          <div class="pricing-price">$799<span>/ 4 Hours</span></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i> 1 Interactive Mirror or Glam Booth</li>
+            <li><i data-lucide="check"></i> Unlimited Dye-Sub High Speed Prints</li>
+            <li><i data-lucide="check"></i> Luxe Backdrop & Pro Prop Kit</li>
+            <li><i data-lucide="check"></i> Instant Text/Email Sharing Station</li>
+            <li><i data-lucide="check"></i> Premium Guest Memory Album</li>
+          </ul>
+          <a href="contact.html" class="btn-gold-primary w-100">Select Premium</a>
+        </div>
+      </div>
+      <!-- Plan 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="pricing-card">
+          <h3 class="pricing-title">Luxury Package</h3>
+          <p class="text-muted">Top tier corporate events & weddings</p>
+          <div class="pricing-price">$1,299<span>/ 4 Hours</span></div>
+          <ul class="pricing-features">
+            <li><i data-lucide="check"></i> 360° Slow-Motion Video Booth</li>
+            <li><i data-lucide="check"></i> Full Custom Graphic & Music Overlay</li>
+            <li><i data-lucide="check"></i> Interactive Laser Projection Systems</li>
+            <li><i data-lucide="check"></i> Custom Vinyl Wrap Branding</li>
+            <li><i data-lucide="check"></i> Multi-Kiosk Sharing Stations</li>
+          </ul>
+          <a href="contact.html" class="btn-glass-secondary w-100">Select Luxury</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. TESTIMONIALS CAROUSEL
+       ========================================================================== -->
+  <section class="section-padding bg-light-dark" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Real Reviews</span>
+        <h2>Why Clients Love Us</h2>
+      </div>
+
+      <div class="swiper testimonials-swiper pb-5">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="floating-glass-card h-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=100&h=100&q=80"
+                  alt="Sarah J." class="rounded-circle"
+                  style="width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--gold-primary);">
+                <div>
+                  <h4 class="h6 mb-1">Sarah & Michael J.</h4>
+                  <div class="text-gold" style="color: var(--gold-primary); font-size: 0.85rem;">
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="small text-secondary">"The Glam Booth was a huge hit at our wedding! Every picture looked
+                flawless with the Hollywood lighting filter. Everyone could download their files in seconds."</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="floating-glass-card h-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=100&h=100&q=80"
+                  alt="Marcus T." class="rounded-circle"
+                  style="width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--gold-primary);">
+                <div>
+                  <h4 class="h6 mb-1">Marcus T.</h4>
+                  <div class="text-gold" style="color: var(--gold-primary); font-size: 0.85rem;">
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="small text-secondary">"Outstanding setup for our annual product showcase. The branded vinyl
+                wrapping and customized UI on the sharing kiosk matched our brand aesthetics seamlessly."</p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="floating-glass-card h-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <img
+                  src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=100&h=100&q=80"
+                  alt="Elena K." class="rounded-circle"
+                  style="width: 50px; height: 50px; object-fit: cover; border: 1px solid var(--gold-primary);">
+                <div>
+                  <h4 class="h6 mb-1">Elena K.</h4>
+                  <div class="text-gold" style="color: var(--gold-primary); font-size: 0.85rem;">
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                    <i data-lucide="star" class="d-inline-block fill-current"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="small text-secondary">"The 360 Video Booth completely stole the show! It kept our birthday
+                guests laughing and posing all evening. Exceptional coordinators and pristine gear."</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. BOOKING PROCESS TIMELINE
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">How it Works</span>
+      <h2>Booking Made Simple</h2>
+    </div>
+
+    <div class="timeline-vertical">
+      <!-- Step 1 -->
+      <div class="timeline-step left" data-aos="fade-right">
+        <div class="timeline-marker"></div>
+        <div class="floating-glass-card d-inline-block text-start">
+          <span class="text-gold fw-bold d-block mb-2" style="color: var(--gold-primary);">Step 01</span>
+          <h4>Select Your Style</h4>
+          <p class="small text-secondary m-0">Explore our Mirror, Glam, or 360 Video booths and choose the backdrop that
+            fits your theme.</p>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="timeline-step right" data-aos="fade-left">
+        <div class="timeline-marker"></div>
+        <div class="floating-glass-card d-inline-block text-start">
+          <span class="text-gold fw-bold d-block mb-2" style="color: var(--gold-primary);">Step 02</span>
+          <h4>Secure Your Date</h4>
+          <p class="small text-secondary m-0">Confirm event details, complete a secure virtual payment deposit, and
+            finalize print layouts.</p>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="timeline-step left" data-aos="fade-right">
+        <div class="timeline-marker"></div>
+        <div class="floating-glass-card d-inline-block text-start">
+          <span class="text-gold fw-bold d-block mb-2" style="color: var(--gold-primary);">Step 03</span>
+          <h4>Relax & Celebrate</h4>
+          <p class="small text-secondary m-0">We handle delivery, setup, and guest hosting. Simply strike a pose and
+            share the magic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. FINAL CTA SECTION
+       ========================================================================== -->
+  <section class="section-padding container">
+    <div class="floating-glass-card text-center p-5" data-aos="zoom-in"
+      style="background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(212,175,55,0.05)); border: 2px solid var(--gold-primary);">
+      <span class="section-subtitle">Let's Connect</span>
+      <h2 class="text-white mb-4">Ready to Create Unforgettable Memories?</h2>
+      <p class="text-white-50 mb-5 max-width-600 mx-auto">
+        Availability is limited for premium event seasons. Contact our booking specialists today to reserve your custom
+        photo experience.
+      </p>
+      <div class="button-group">
+        <a href="contact.html" class="btn-gold-primary">Reserve Your Booth</a>
+        <a href="pricing.html" class="btn-glass-secondary">View Rates</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. PREMIUM FOOTER
+       ========================================================================== -->
+  <footer class="premium-footer">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          </a>
+          <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium
+            slow-motion 360-degree captures across major corporate events and weddings.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booth-styles.html">Booth Styles</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4>Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="faq.html">FAQ & Reviews</a></li>
+            <li><a href="contact.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4>Inquire</h4>
+          <p class="small mb-3">100 Luxury Avenue, Suite 2026<br>Beverly Hills, CA 90210</p>
+          <p class="small mb-2"><i data-lucide="mail" class="d-inline-block me-2 align-middle text-gold"
+              style="width: 16px; color: var(--gold-primary);"></i> booking@luxebooth.com</p>
+          <p class="small"><i data-lucide="phone" class="d-inline-block me-2 align-middle text-gold"
+              style="width: 16px; color: var(--gold-primary);"></i> (800) 555-LUXE</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUXEBOOTH Premium Rentals. All Rights Reserved. Crafted for visual excellence.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       DYNAMIC LIGHTBOX COMPONENT
+       ========================================================================== -->
+  <div id="premium-lightbox" class="premium-lightbox" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous Image"><i data-lucide="chevron-left"></i></button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img">
+    </div>
+    <button class="lightbox-next" aria-label="Next Image"><i data-lucide="chevron-right"></i></button>
+  </div>
+
+  <!-- Library Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Core Logic -->
+  <script src="js/main.js"></script>
+
+  <!-- Initialize Icons -->
+  <script>
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+</body>
+
+</html>
