@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. FORM HANDLERS & VALIDATION
   initForms();
+
+  // 6. SCROLL TO TOP & LEGAL LINKS
+  initScrollToTop();
+  initFooterLinks();
 });
 
 /* ==========================================================================
@@ -477,4 +481,51 @@ function showSuccessMessage(form) {
       onComplete: () => overlay.remove()
     });
   }, 4000);
+}
+
+/* ==========================================================================
+   6. SCROLL TO TOP & LEGAL LINKS
+   ========================================================================== */
+
+function initScrollToTop() {
+  const btn = document.createElement('button');
+  btn.id = 'scroll-to-top';
+  btn.className = 'scroll-to-top';
+  btn.setAttribute('aria-label', 'Scroll to top');
+  btn.innerHTML = '<i data-lucide="chevron-up"></i>';
+  document.body.appendChild(btn);
+
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+function initFooterLinks() {
+  const footerBottom = document.querySelector('.footer-bottom');
+  if (footerBottom) {
+    if (!footerBottom.querySelector('.footer-legal-links')) {
+      const legalLinks = document.createElement('div');
+      legalLinks.className = 'footer-legal-links';
+      legalLinks.innerHTML = `
+        <a href="#" class="mx-2 text-decoration-none">Terms & Conditions</a> | 
+        <a href="#" class="mx-2 text-decoration-none">Privacy Policy</a>
+      `;
+      footerBottom.appendChild(legalLinks);
+    }
+  }
 }

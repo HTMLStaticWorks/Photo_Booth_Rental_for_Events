@@ -18,11 +18,11 @@
   --bg-secondary: #fbfbfd;
   --bg-card: #ffffff;
   --text-primary: #111111;
-  --text-secondary: #515154;
-  --text-muted: #86868b;
+  --text-secondary: #202022; /* High-contrast near-black gray */
+  --text-muted: #4a4a4e; /* High-contrast medium gray */
   
   /* Luxury Gold Details */
-  --gold-primary: #d4af37;
+  --gold-primary: #8c6209; /* Deep gold for light mode text readability */
   --gold-dark: #aa771c;
   --gold-light: #f3e5ab;
   --gold-gradient: linear-gradient(135deg, #b38728, #f3e5ab, #d4af37, #aa771c);
@@ -30,7 +30,7 @@
 
   /* Glassmorphism Variables */
   --bg-glass: rgba(255, 255, 255, 0.75);
-  --border-glass: rgba(212, 175, 55, 0.15);
+  --border-glass: rgba(140, 98, 9, 0.25); /* Warm bronze-gold high contrast border */
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
   --blur-glass: 16px;
 
@@ -41,6 +41,62 @@
   --nav-height: 80px;
 }
 
+/* Ensure text helper classes respect design variables in light mode */
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+.text-muted {
+  color: var(--text-muted) !important;
+}
+.text-gold {
+  color: var(--gold-primary) !important;
+}
+
+/* Form inputs placeholders high contrast */
+.premium-form-control::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+}
+
+/* Premium dark CTA card utility */
+.dark-cta-card {
+  background: linear-gradient(135deg, #050505 0%, #151515 100%) !important;
+  border: 2px solid var(--gold-primary) !important;
+}
+
+/* Global button underline removal */
+.btn-gold-primary,
+.btn-glass-secondary,
+.social-icon,
+.btn-gold-primary:hover,
+.btn-glass-secondary:hover,
+.social-icon:hover,
+.btn-gold-primary:focus,
+.btn-glass-secondary:focus,
+.social-icon:focus,
+a.btn-gold-primary,
+a.btn-glass-secondary,
+a.social-icon {
+  text-decoration: none !important;
+}
+
+/* Heading underline removal */
+.section-header h2::after {
+  display: none !important;
+}
+
+/* Visible social icons in light mode outside footer */
+body:not(.dark-mode) .social-icon:not(footer *) {
+  color: var(--text-primary) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid var(--border-glass) !important;
+}
+body:not(.dark-mode) .social-icon:not(footer *):hover {
+  color: #000000 !important;
+  background: var(--gold-gradient) !important;
+  border-color: transparent !important;
+}
+
 /* Dark Mode Variables Override */
 body.dark-mode {
   --bg-primary: #000000;
@@ -49,6 +105,7 @@ body.dark-mode {
   --text-primary: #ffffff;
   --text-secondary: #ffffff;
   --text-muted: #ffffff;
+  --gold-primary: #d4af37; /* Original bright gold for dark mode */
 
   /* Premium Glass for Dark Mode (No Gray Panels allowed) */
   --bg-glass: rgba(0, 0, 0, 0.85);
@@ -80,6 +137,10 @@ body.dark-mode li.text-muted {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 html {
@@ -137,6 +198,9 @@ h1 {
   max-width: 800px;
   margin: 0 auto 4rem auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-header h2 {
@@ -158,6 +222,8 @@ h1 {
 }
 
 .section-subtitle {
+  display: block !important;
+  width: 100%;
   font-family: var(--font-body);
   font-size: 1.1rem;
   color: var(--gold-primary);
@@ -178,6 +244,7 @@ p {
 .btn-gold-primary {
   display: inline-flex;
   align-items: center;
+  text-decoration: none !important;
   justify-content: center;
   padding: 0.85rem 2.2rem;
   font-family: var(--font-body);
@@ -226,6 +293,7 @@ p {
 .btn-glass-secondary {
   display: inline-flex;
   align-items: center;
+  text-decoration: none !important;
   justify-content: center;
   padding: 0.8rem 2.1rem;
   font-family: var(--font-body);
@@ -406,8 +474,10 @@ header.premium-header.scrolled {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  width: 24px !important;
+  height: 18px !important;
+  min-width: 24px !important;
+  min-height: 18px !important;
   background: none;
   border: none;
   cursor: pointer;
@@ -577,6 +647,10 @@ header.premium-header.scrolled {
   opacity: 1;
 }
 
+body:not(.dark-mode) .brand-logo-item {
+  opacity: 0.85;
+}
+
 @keyframes ticker {
   0% { transform: translate3d(0, 0, 0); }
   100% { transform: translate3d(-50%, 0, 0); }
@@ -665,6 +739,13 @@ header.premium-header.scrolled {
   justify-content: center;
   color: var(--gold-primary);
   transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .category-card:hover .category-icon {
@@ -1235,9 +1316,10 @@ footer.premium-footer p {
     background: var(--bg-glass);
     flex-direction: column;
     align-items: center;
-    padding: 3rem 0;
+    padding: 2rem 0;
     transition: var(--transition-smooth);
     z-index: 999;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
@@ -1328,9 +1410,10 @@ footer.premium-footer p {
     background: var(--bg-glass);
     flex-direction: column;
     align-items: center;
-    padding: 3rem 0;
+    padding: 2rem 0;
     transition: var(--transition-smooth);
     z-index: 999;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
@@ -1350,11 +1433,28 @@ footer.premium-footer p {
 /* Desktop (1024px to 1280px) */
 @media (min-width: 1024px) and (max-width: 1279.98px) {
   .nav-container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .brand-logo {
+    font-size: 1.25rem;
   }
   
   .nav-menu {
-    gap: 1rem;
+    gap: 0.65rem;
+  }
+  
+  .nav-link {
+    font-size: 0.85rem;
+  }
+  
+  .header-ctas .btn-gold-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .header-controls {
+    gap: 0.5rem;
   }
 }
 
@@ -1391,4 +1491,130 @@ a,
 .accordion-button {
   min-height: 44px;
   min-width: 44px;
+}
+
+/* Statistics row spacing */
+.stats-section {
+  margin-top: 6rem !important;
+}
+@media (max-width: 767.98px) {
+  .stats-section {
+    margin-top: 4rem !important;
+  }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: var(--gold-gradient);
+  color: #000000 !important;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--gold-glow);
+}
+
+/* Footer Legal Links */
+.footer-legal-links {
+  margin-top: 0.75rem;
+}
+
+.footer-legal-links a {
+  color: #a1a1a6 !important;
+  font-size: 0.85rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-legal-links a:hover {
+  color: var(--gold-primary) !important;
+}
+
+/* Premium CTA card background override to ensure text readability in all modes */
+.section-padding > .floating-glass-card.p-5,
+.section-padding > .container > .floating-glass-card.p-5 {
+  background: linear-gradient(135deg, #050505 0%, #151515 100%) !important;
+  border: 2px solid var(--gold-primary) !important;
+}
+
+/* Testimonials Swiper Equal Height Cards */
+.testimonials-swiper .swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+.testimonials-swiper .swiper-slide .floating-glass-card {
+  width: 100%;
+}
+
+/* Ensure container elements do not touch layout borders in mobile views */
+@media (max-width: 767.98px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* Dark background text and headings color overrides for light mode compatibility */
+.bg-dark p,
+.bg-dark-section p {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark h4,
+.bg-dark h5,
+.bg-dark h6 {
+  color: #ffffff !important;
+}
+
+/* Horizontal scroll styling for package add-on cards in responsive views */
+@media (max-width: 991.98px) {
+  .addons-scroll-row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding-bottom: 1.5rem !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .addons-scroll-row > [class*="col-"] {
+    flex: 0 0 280px !important;
+    max-width: 280px !important;
+    scroll-snap-align: start;
+  }
+  .addons-scroll-row::-webkit-scrollbar {
+    height: 6px;
+  }
+  .addons-scroll-row::-webkit-scrollbar-track {
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 3px;
+  }
+  .addons-scroll-row::-webkit-scrollbar-thumb {
+    background: var(--gold-primary);
+    border-radius: 3px;
+  }
 }

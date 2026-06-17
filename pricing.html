@@ -71,6 +71,29 @@
       border-color: var(--gold-primary);
       box-shadow: 0 10px 20px var(--gold-glow);
     }
+    .addon-img-wrapper {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem auto;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      overflow: hidden;
+      border: 1px solid var(--border-glass);
+    }
+    .addon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .addon-card:hover .addon-img-wrapper {
+      background: var(--gold-gradient);
+      transform: rotateY(360deg);
+      border-color: transparent;
+    }
   </style>
 </head>
 <body>
@@ -283,11 +306,13 @@
       <h2>Upgrade Your Experience</h2>
     </div>
 
-    <div class="row g-4">
+    <div class="row g-4 addons-scroll-row">
       <!-- Addon 1 -->
       <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
         <div class="addon-card text-center">
-          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="plus-circle" style="width: 32px; height: 32px;"></i></div>
+          <div class="addon-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=150&h=150&q=80" alt="Extra Rental Hour" class="addon-img">
+          </div>
           <h4 class="h6 mb-2">Extra Rental Hour</h4>
           <p class="small text-secondary mb-3">Keep the celebration running longer.</p>
           <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$150 / hr</div>
@@ -296,7 +321,9 @@
       <!-- Addon 2 -->
       <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
         <div class="addon-card text-center">
-          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="paint-brush" style="width: 32px; height: 32px;"></i></div>
+          <div class="addon-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=150&h=150&q=80" alt="Custom Cabinet Wrap" class="addon-img">
+          </div>
           <h4 class="h6 mb-2">Custom Cabinet Wrap</h4>
           <p class="small text-secondary mb-3">Add vinyl branding logos/graphics.</p>
           <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$350 flat</div>
@@ -305,7 +332,9 @@
       <!-- Addon 3 -->
       <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
         <div class="addon-card text-center">
-          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="camera" style="width: 32px; height: 32px;"></i></div>
+          <div class="addon-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=150&h=150&q=80" alt="Roaming Host Coverage" class="addon-img">
+          </div>
           <h4 class="h6 mb-2">Roaming Host Coverage</h4>
           <p class="small text-secondary mb-3">Roaming ring light snaps photos.</p>
           <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$120 / hr</div>
@@ -314,7 +343,9 @@
       <!-- Addon 4 -->
       <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
         <div class="addon-card text-center">
-          <div class="text-gold mb-3" style="color: var(--gold-primary);"><i data-lucide="book-open" style="width: 32px; height: 32px;"></i></div>
+          <div class="addon-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=150&h=150&q=80" alt="Luxury Leather Album" class="addon-img">
+          </div>
           <h4 class="h6 mb-2">Luxury Leather Album</h4>
           <p class="small text-secondary mb-3">Printed guestbook filled with snaps.</p>
           <div class="fw-bold" style="color: var(--gold-primary); font-size: 1.2rem;">$100 flat</div>
