@@ -257,8 +257,9 @@ function initMobileMenu() {
   if (!hamburger || !navMenu) return;
 
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    const isActive = hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active', isActive);
+    document.body.classList.toggle('no-scroll', isActive);
   });
 
   // Close menu when clicking link
@@ -266,6 +267,7 @@ function initMobileMenu() {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
+      document.body.classList.remove('no-scroll');
     });
   });
 }

@@ -22,7 +22,7 @@
   --text-muted: #4a4a4e; /* High-contrast medium gray */
   
   /* Luxury Gold Details */
-  --gold-primary: #8c6209; /* Deep gold for light mode text readability */
+  --gold-primary: #d4af37; /* Same gold color used in dark mode */
   --gold-dark: #aa771c;
   --gold-light: #f3e5ab;
   --gold-gradient: linear-gradient(135deg, #b38728, #f3e5ab, #d4af37, #aa771c);
@@ -156,6 +156,23 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.no-scroll header.premium-header {
+  background: var(--bg-primary) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.no-scroll .nav-menu {
+  background: var(--bg-primary) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 /* Text Selection */
@@ -1316,7 +1333,7 @@ footer.premium-footer p {
     background: var(--bg-glass);
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0;
+    padding: 2rem 0 6rem 0;
     transition: var(--transition-smooth);
     z-index: 999;
     overflow-y: auto;
@@ -1410,7 +1427,7 @@ footer.premium-footer p {
     background: var(--bg-glass);
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0;
+    padding: 2rem 0 6rem 0;
     transition: var(--transition-smooth);
     z-index: 999;
     overflow-y: auto;
@@ -1460,6 +1477,16 @@ footer.premium-footer p {
 
 /* Mobile & Tablet controls visibility inside hamburger menu */
 @media (max-width: 1023.98px) {
+  .brand-logo {
+    position: relative;
+    z-index: 1005;
+  }
+
+  .header-controls {
+    position: relative;
+    z-index: 1005;
+  }
+
   .mobile-menu-controls {
     display: flex !important;
     align-items: center;
@@ -1616,5 +1643,15 @@ a,
   .addons-scroll-row::-webkit-scrollbar-thumb {
     background: var(--gold-primary);
     border-radius: 3px;
+  }
+}
+
+/* Services Page Hero Adaptive Mobile Height and Spacing */
+@media (max-width: 767.98px) {
+  .hero-cinema[style] {
+    height: auto !important;
+    min-height: 550px !important;
+    padding-top: calc(var(--nav-height) + 3.5rem) !important;
+    padding-bottom: 4rem !important;
   }
 }
