@@ -45,7 +45,10 @@
   <header class="premium-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo">
-        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+        <div class="brand-logo-icon-wrapper">
+          <i data-lucide="aperture"></i>
+        </div>
+        LUXE<span>BOOTH</span>
       </a>
 
       <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
@@ -68,6 +71,7 @@
             <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
               <i data-lucide="arrow-left-right"></i>
             </button>
+            <a href="login.html" class="btn-glass-secondary">Login</a>
             <a href="contact.html" class="btn-gold-primary">Book Now</a>
           </li>
         </ul>
@@ -75,15 +79,16 @@
 
       <!-- Header controls for Desktop -->
       <div class="header-controls">
-        <div class="header-ctas">
-          <a href="contact.html" class="btn-gold-primary">Book Now</a>
-        </div>
         <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
           <i data-lucide="moon"></i>
         </button>
         <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
           <i data-lucide="arrow-left-right"></i>
         </button>
+        <div class="header-ctas">
+          <a href="login.html" class="btn-glass-secondary">Login</a>
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
         <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
           <span></span>
           <span></span>
@@ -96,10 +101,26 @@
   <!-- ==========================================================================
        BOOTH STYLES HERO
        ========================================================================== -->
-  <section class="section-padding container text-center" style="margin-top: var(--nav-height);">
-    <div class="section-header" data-aos="fade-up">
-      <span class="section-subtitle">Exquisite Aesthetics</span>
-      <h1 class="h1">Luxury Booth Showcase</h1>
+  <!-- ==========================================================================
+       BOOTH STYLES HERO (SPLIT SCREEN)
+       ========================================================================== -->
+  <section class="container-fluid p-0" style="margin-top: var(--nav-height); background: var(--bg-card); overflow: hidden;">
+    <div class="row g-0">
+      <div class="col-lg-6 d-flex flex-column justify-content-center px-4 px-lg-5 py-5" style="min-height: 50vh;">
+        <div class="px-lg-5" data-aos="fade-right">
+          <span class="section-subtitle">Exquisite Aesthetics</span>
+          <h1 class="h1 mb-4" style="font-size: 3rem;">Luxury Booth Showcase</h1>
+          <p class="text-secondary mb-0" style="max-width: 500px; font-size: 1.1rem; line-height: 1.8;">
+            Discover our meticulously curated collection of premium photo experiences, designed to seamlessly blend with your event's decor while providing unmatched entertainment for your guests.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="position-relative h-100" style="min-height: 40vh;" data-aos="fade-left">
+          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80" alt="Luxury Event Setup" class="w-100 h-100" style="object-fit: cover; min-height: 40vh;">
+          <div class="position-absolute top-0 start-0 w-100 h-100 d-none d-lg-block" style="background: linear-gradient(90deg, var(--bg-card) 0%, transparent 50%);"></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -112,7 +133,7 @@
     <div class="row align-items-center g-5 style-row">
       <div class="col-lg-6" data-aos="fade-right">
         <div class="style-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80" alt="360 Video Booth setup">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.KTwBNYMti8DWCKgeU_y8agHaE9?w=1920&h=1288&rs=1&pid=ImgDetMain&o=7&rm=3" alt="360 Video Booth setup">
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-left">
@@ -146,7 +167,7 @@
     <div class="row align-items-center g-5 style-row flex-lg-row-reverse">
       <div class="col-lg-6" data-aos="fade-left">
         <div class="style-img-wrapper">
-          <img src="https://www.djcwest.com/wp-content/uploads/2025/06/Mirror-Booth-Rental-Phoenix-2-1-683x1024.jpg" alt="Interactive Mirror Photo Booth">
+          <img src="https://rhinosdjs.ca/wp-content/uploads/2025/06/Interactive-Photo-Booth-Fun.jpg" alt="Interactive Mirror Photo Booth">
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-right">
@@ -180,7 +201,7 @@
     <div class="row align-items-center g-5 style-row">
       <div class="col-lg-6" data-aos="fade-right">
         <div class="style-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" alt="Glam Portrait Booth style">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.pQNrAyJ0QevthblJ56JCxQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Glam Portrait Booth style">
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-left">
@@ -214,7 +235,7 @@
     <div class="row align-items-center g-5 style-row flex-lg-row-reverse">
       <div class="col-lg-6" data-aos="fade-left">
         <div class="style-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80" alt="Open Air Photo Booth Design">
+          <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=80" alt="Open Air Photo Booth Design">
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-right">
@@ -248,7 +269,7 @@
     <div class="row align-items-center g-5 style-row">
       <div class="col-lg-6" data-aos="fade-right">
         <div class="style-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=80" alt="GIF Photo Booth interactive">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.LjV5DRBoCscoHezfuK89DAHaFk?rs=1&pid=ImgDetMain&o=7&rm=3" alt="GIF Photo Booth interactive">
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-left">
@@ -282,7 +303,7 @@
     <div class="row align-items-center g-5 style-row flex-lg-row-reverse">
       <div class="col-lg-6" data-aos="fade-left">
         <div class="style-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?auto=format&fit=crop&w=1200&q=80" alt="Roaming Photo Booth ringlight">
+          <img src="https://jetcenterevents.com/wp-content/uploads/2023/03/az-jet-center-charity-event-2023_52714578183_o.jpg" alt="Roaming Photo Booth ringlight">
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-right">
@@ -336,8 +357,11 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-4 col-md-6">
-          <a href="index.html" class="footer-logo">
-            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          <a href="index.html" class="footer-logo brand-logo">
+            <div class="brand-logo-icon-wrapper">
+              <i data-lucide="aperture"></i>
+            </div>
+            LUXE<span>BOOTH</span>
           </a>
           <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
           <div class="social-links">

@@ -31,7 +31,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80');
+      background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
       animation: kenburns 20s ease-in-out infinite alternate;
@@ -80,7 +80,10 @@
   <header class="premium-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo">
-        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+        <div class="brand-logo-icon-wrapper">
+          <i data-lucide="aperture"></i>
+        </div>
+        LUXE<span>BOOTH</span>
       </a>
 
       <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
@@ -103,6 +106,7 @@
             <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
               <i data-lucide="arrow-left-right"></i>
             </button>
+            <a href="login.html" class="btn-glass-secondary">Login</a>
             <a href="contact.html" class="btn-gold-primary">Book Now</a>
           </li>
         </ul>
@@ -110,15 +114,16 @@
 
       <!-- Header controls for Desktop -->
       <div class="header-controls">
-        <div class="header-ctas">
-          <a href="contact.html" class="btn-gold-primary">Book Now</a>
-        </div>
         <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
           <i data-lucide="moon"></i>
         </button>
         <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
           <i data-lucide="arrow-left-right"></i>
         </button>
+        <div class="header-ctas">
+          <a href="login.html" class="btn-glass-secondary">Login</a>
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
         <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
           <span></span>
           <span></span>
@@ -159,7 +164,7 @@
           <p class="text-white-50">Our track record speaks for itself. We deliver high-end, responsive installations with zero downtime and studio-grade outputs.</p>
         </div>
         <div class="col-lg-7" data-aos="fade-left">
-          <div class="floating-glass-card p-4">
+          <div class="floating-glass-card p-4" style="background: rgba(20, 20, 20, 0.85); border-color: rgba(255, 255, 255, 0.1);">
             <div class="mb-4">
               <div class="d-flex justify-content-between mb-2">
                 <span class="fw-bold">Client Experience Rating</span>
@@ -258,7 +263,7 @@
         <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="floating-glass-card h-100 text-center">
             <div class="category-icon mb-4">
-              <img src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=150&h=150&q=80" alt="Bespoke Customization" class="category-img">
+              <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=150&h=150&q=80" alt="Bespoke Customization" class="category-img">
             </div>
             <h4 class="h5">1. Bespoke Customization</h4>
             <p class="small text-secondary">Our digital artists collaborate with you to create unique overlays, custom templates, and interface themes.</p>
@@ -410,8 +415,11 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-4 col-md-6">
-          <a href="index.html" class="footer-logo">
-            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          <a href="index.html" class="footer-logo brand-logo">
+            <div class="brand-logo-icon-wrapper">
+              <i data-lucide="aperture"></i>
+            </div>
+            LUXE<span>BOOTH</span>
           </a>
           <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
           <div class="social-links">

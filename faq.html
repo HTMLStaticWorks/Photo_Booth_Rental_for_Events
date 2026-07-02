@@ -70,7 +70,10 @@
   <header class="premium-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo">
-        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+        <div class="brand-logo-icon-wrapper">
+          <i data-lucide="aperture"></i>
+        </div>
+        LUXE<span>BOOTH</span>
       </a>
 
       <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
@@ -93,6 +96,7 @@
             <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
               <i data-lucide="arrow-left-right"></i>
             </button>
+            <a href="login.html" class="btn-glass-secondary">Login</a>
             <a href="contact.html" class="btn-gold-primary">Book Now</a>
           </li>
         </ul>
@@ -100,15 +104,16 @@
 
       <!-- Header controls for Desktop -->
       <div class="header-controls">
-        <div class="header-ctas">
-          <a href="contact.html" class="btn-gold-primary">Book Now</a>
-        </div>
         <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
           <i data-lucide="moon"></i>
         </button>
         <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
           <i data-lucide="arrow-left-right"></i>
         </button>
+        <div class="header-ctas">
+          <a href="login.html" class="btn-glass-secondary">Login</a>
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
         <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
           <span></span>
           <span></span>
@@ -119,19 +124,28 @@
   </header>
 
   <!-- ==========================================================================
-       FAQ & REVIEW HERO
+       FAQ & REVIEW HERO (WIDE BANNER)
        ========================================================================== -->
-  <section class="section-padding container text-center" style="margin-top: var(--nav-height);">
-    <div class="section-header" data-aos="fade-up">
-      <span class="section-subtitle">Client Experiences</span>
-      <h1 class="h1">Testimonials & Frequently Asked Questions</h1>
+  <section class="position-relative text-center d-flex flex-column justify-content-center align-items-center" style="margin-top: var(--nav-height); min-height: 40vh; background: var(--gold-gradient); overflow: hidden; border-bottom: 1px solid var(--border-glass);">
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.8;"></div>
+    <div class="position-relative z-index-10 px-4 w-100" data-aos="fade-up">
+      <span class="section-subtitle d-block mb-2" style="color: rgba(0,0,0,0.7); letter-spacing: 2px;">Client Experiences & Support</span>
+      <h1 class="h1 mb-4" style="color: #111;">Testimonials & FAQ</h1>
+      <p class="mb-4 max-width-600 mx-auto" style="color: rgba(0,0,0,0.8); font-size: 1.1rem; line-height: 1.6;">
+        Everything you need to know about our luxury photo booth rentals, from setup logistics to bespoke customization options.
+      </p>
+      <div class="input-group mx-auto" style="max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 30px; overflow: hidden; border: 2px solid rgba(255,255,255,0.5);">
+        <span class="input-group-text bg-white border-0 ps-4" style="color: #999;"><i data-lucide="search" style="width: 18px;"></i></span>
+        <input type="text" class="form-control border-0 py-3 px-3 shadow-none bg-white" placeholder="Search for answers..." style="color: #333;" aria-label="Search FAQ">
+        <button class="btn px-4 text-white" style="background: #111; border-radius: 0 30px 30px 0; font-weight: 600;">Search</button>
+      </div>
     </div>
   </section>
 
   <!-- ==========================================================================
        1. TEXT REVIEWS & STAR RATINGS
        ========================================================================== -->
-  <section class="container mb-5">
+  <section class="container mt-5 pt-5 mb-5">
     <div class="row g-4">
       <!-- Review 1 -->
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -337,8 +351,11 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-4 col-md-6">
-          <a href="index.html" class="footer-logo">
-            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          <a href="index.html" class="footer-logo brand-logo">
+            <div class="brand-logo-icon-wrapper">
+              <i data-lucide="aperture"></i>
+            </div>
+            LUXE<span>BOOTH</span>
           </a>
           <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
           <div class="social-links">

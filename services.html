@@ -65,7 +65,10 @@
   <header class="premium-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo">
-        <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+        <div class="brand-logo-icon-wrapper">
+          <i data-lucide="aperture"></i>
+        </div>
+        LUXE<span>BOOTH</span>
       </a>
 
       <!-- Navigation Order: Home, Home 2, About, Services, Booth Styles, Packages, Gallery, Testimonials, Contact -->
@@ -88,6 +91,7 @@
             <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
               <i data-lucide="arrow-left-right"></i>
             </button>
+            <a href="login.html" class="btn-glass-secondary">Login</a>
             <a href="contact.html" class="btn-gold-primary">Book Now</a>
           </li>
         </ul>
@@ -95,15 +99,16 @@
 
       <!-- Header controls for Desktop -->
       <div class="header-controls">
-        <div class="header-ctas">
-          <a href="contact.html" class="btn-gold-primary">Book Now</a>
-        </div>
         <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
           <i data-lucide="moon"></i>
         </button>
         <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
           <i data-lucide="arrow-left-right"></i>
         </button>
+        <div class="header-ctas">
+          <a href="login.html" class="btn-glass-secondary">Login</a>
+          <a href="contact.html" class="btn-gold-primary">Book Now</a>
+        </div>
         <button id="hamburger" class="hamburger-menu" aria-label="Open Mobile Menu">
           <span></span>
           <span></span>
@@ -378,8 +383,11 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-4 col-md-6">
-          <a href="index.html" class="footer-logo">
-            <i data-lucide="camera"></i> LUXE<span>BOOTH</span>
+          <a href="index.html" class="footer-logo brand-logo">
+            <div class="brand-logo-icon-wrapper">
+              <i data-lucide="aperture"></i>
+            </div>
+            LUXE<span>BOOTH</span>
           </a>
           <p class="mb-4">Delivering luxury studio-quality photo booth experiences, custom prints, and premium slow-motion 360-degree captures across major corporate events and weddings.</p>
           <div class="social-links">
