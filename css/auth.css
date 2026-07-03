@@ -153,3 +153,12 @@ body.dark-mode .social-icon-img {
   margin-top: 2rem;
   text-align: center;
 }
+
+@media (max-width: 575.98px) {
+  .auth-card {
+    padding: 2rem 1.25rem;
+  }
+  .auth-card .brand-logo {
+    font-size: 1.4rem;
+  }
+}

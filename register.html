@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -6,17 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register | LUXEBOOTH</title>
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z%22/><circle cx=%2212%22 cy=%2213%22 r=%223%22/></svg>">
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23d4af37%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><path d=%22m14.31 8 5.74 9.94%22/><path d=%22M9.69 8h11.48%22/><path d=%22m7.38 12 5.74-9.94%22/><path d=%22M9.69 16 3.95 6.06%22/><path d=%22M14.31 16H2.83%22/><path d=%22m16.62 12-5.74 9.94%22/></svg>">
 
   <!-- CSS Library CDNs -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <!-- Core Styles -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/auth.css" rel="stylesheet">
 </head>
 
-<body class="auth-page">
+<body class="auth-page position-relative">
+
+  <div class="position-absolute top-0 end-0 p-4 d-flex gap-2" style="z-index: 100;">
+    <button class="icon-btn theme-toggle" aria-label="Toggle Dark/Light Mode">
+      <i data-lucide="moon"></i>
+    </button>
+    <button class="icon-btn rtl-toggle" aria-label="Toggle RTL Alignment">
+      <i data-lucide="arrow-left-right"></i>
+    </button>
+  </div>
 
   <div class="auth-card">
     <a href="index.html" class="brand-logo justify-content-center mb-4">
@@ -25,12 +34,12 @@
       </div>
       LUXE<span>BOOTH</span>
     </a>
-    
+
     <div class="text-center mb-4">
       <h2 class="auth-title">Begin Your Legacy</h2>
       <p class="auth-subtitle">Register your profile to activate your event dashboard.</p>
     </div>
-    
+
     <form action="#" method="POST">
       <div class="auth-form-group">
         <label class="auth-label">Full Name</label>
@@ -41,7 +50,7 @@
         <label class="auth-label">Email Address</label>
         <input type="email" class="form-control auth-input" placeholder="jane@example.com" required>
       </div>
-      
+
       <div class="auth-form-group">
         <label class="auth-label">Password</label>
         <input type="password" class="form-control auth-input" placeholder="Min. 8 characters" required>
@@ -51,40 +60,44 @@
         <label class="auth-label">Confirm Password</label>
         <input type="password" class="form-control auth-input" placeholder="Re-enter password" required>
       </div>
-      
+
       <div class="form-check mb-4 d-flex gap-2 align-items-start">
         <input type="checkbox" class="form-check-input mt-1" id="termsCheck" required>
         <label class="form-check-label auth-label-sm m-0" for="termsCheck">
-          I agree to the LUXEBOOTH <a href="#" class="auth-link">Terms of Service</a> and consent to dynamic event matching.
+          I agree to <a href="#" class="auth-link">Terms of Service</a>
         </label>
       </div>
-      
+
       <button type="submit" class="btn-gold-primary auth-btn mb-4">Create Account</button>
     </form>
-    
+
     <div class="auth-divider">
       <span>or continue with</span>
     </div>
-    
+
     <div class="d-flex gap-3 mb-4">
       <button type="button" class="auth-social-btn flex-grow-1">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg" alt="Google" class="social-icon-img"> Google
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg" alt="Google" class="social-icon-img">
+        Google
       </button>
       <button type="button" class="auth-social-btn flex-grow-1">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apple.svg" alt="Apple" class="social-icon-img"> Apple
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apple.svg" alt="Apple" class="social-icon-img">
+        Apple
       </button>
     </div>
-    
+
     <div class="text-center auth-footer-text">
       Already have an account? <a href="login.html" class="auth-link">Sign in here</a>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.372.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
   <script>
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
   </script>
 </body>
+
 </html>
