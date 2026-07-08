@@ -1309,7 +1309,8 @@ footer.premium-footer p {
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
